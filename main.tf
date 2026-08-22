@@ -9,5 +9,4 @@ resource "aws_instance" "name" {
   tags = {
     Name = "gitopss-server"
   }
-  
 }
