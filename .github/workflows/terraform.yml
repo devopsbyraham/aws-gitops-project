@@ -72,6 +72,13 @@ jobs:
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
 
+   # permission with OIDC     
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ secrets.ARN }}
+        aws-region: us-east-1 # Change to your target region
+
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
